@@ -1,0 +1,238 @@
+/* For the regular style */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./assets/Fonts/PPNEUEMONTREAL-BOLD.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* For the italic style */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./assets/Fonts/PPNEUEMONTREAL-ITALIC.OTF") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/PPNeueMontreal-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.wrapper {
+  display: flex;
+  overflow-x: scroll;
+
+  /* justify-content: center; */
+  align-items: center;
+  /* scroll-behavior: smooth; */
+  padding: 1rem;
+  column-gap: 6rem;
+  height: 88vh;
+  width: 98vw;
+
+  /* border: 1px solid red; */
+}
+
+/* .wrapper::-webkit-scrollbar {
+  display: none;
+} */
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 26vw;
+  font-size: 60px;
+}
+
+.img-wrapper {
+  display: flex;
+  column-gap: 30px;
+  padding: 1rem;
+}
+
+.img-wrapper img {
+  width: 220px;
+  height: 300px;
+}
+
+.hide-wrapper {
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  padding: 1rem;
+  font-family: "PP Neue Montreal";
+  align-items: flex-start;
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.hide-wrapper h1 {
+  font-family: "PP Neue Montreal";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.hide-wrapper h1 i {
+  font-family: "PP Neue Montreal";
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hide-wrapper p {
+  color: #121212;
+  font-family: "PP Neue Montreal";
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.button {
+  margin-top: 1rem;
+  display: flex;
+  background-color: #809aa3;
+
+  color: white;
+  justify-content: space-between;
+  font-size: 16px;
+
+  width: 200px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  align-items: center;
+}
+
+.button .button-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button .button-left {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "PP Neue Montreal";
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: #e7e7e7; /* Scrollbar color */
+}
+
+/* This will style the actual 'thumb' of the scrollbar */
+.wrapper::-webkit-scrollbar-thumb {
+  background: #809aa3; /* Scroller Color */
+  border-radius: 10px; /* Optional: Rounds the corners of the scrollbar thumb */
+}
+
+/* This will style the scrollbar itself */
+.wrapper::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+/* Add styling for other browsers like Firefox */
+.wrapper {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #809aa3 #e7e7e7; /* thumb and track color */
+}
+
+/* .navbar div .img1 {
+  width: 80px;
+  height: 30px;
+}
+
+.navbar div .img2 {
+  width: 20px;
+  height: 10px;
+}
+
+.image-black {
+  filter: invert(100%) brightness(0);
+}
+
+.navbar div {
+  height: fit-content;
+} */
+
+.navbar {
+  height: 6vh;
+  background: white;
+  width: 25vw;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  border: 2px solid #eeeeee;
+  align-items: center; /* This is the key for vertical alignment */
+}
+
+.navbar div .img1 {
+  width: 60px;
+  height: 30px;
+}
+
+.navbar div .img2 {
+  width: 20px;
+  height: 10px;
+}
+
+.image-black {
+  filter: invert(100%) brightness(0);
+  width: 20px;
+  height: 20px;
+}
+
+.navbar div {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6px;
+}
+
+/* Apply a right border to all divs except the last one */
+.navbar div:not(:last-child) {
+  border-right: 2px solid #eeeeee;
+}
