@@ -13,6 +13,8 @@ import Line from "./assets/Line.png";
 import Arrow from "./assets/arrow.png";
 import FirstNav from "./assets/FirstNav.png";
 import SecondNav from "./assets/SecondNav.png";
+import QLogo from "./assets/QLogo.png";
+import Cart from "./assets/Cart.png";
 // import Navbar from "./Navbar";
 
 const App = () => {
@@ -64,15 +66,7 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="main-div">
       <div className="navbar">
         <div>
           <img src={FirstNav} alt="" className="img2" />
@@ -87,6 +81,129 @@ const App = () => {
         </div>
       </div>
 
+      <div className="navbar-first">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+          className="navbar-first-div1"
+        >
+          <div style={{ height: "5vh" }}>
+            <img src={QLogo} style={{ height: "5vh" }} />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginRight: "10px",
+                borderLeft: "1px solid rgba(236, 236, 236, 0.93)",
+                padding: "0 10px",
+              }}
+            >
+              <div style={{ width: "30px" }}>
+                <img src={Cart} />
+              </div>
+              <div style={{ fontSize: "36px", marginLeft: "5px" }}>0</div>
+            </div>
+            <div
+              style={{
+                width: "40px",
+                height: "5vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderLeft: "1px solid rgba(236, 236, 236, 0.93)",
+                padding: "0 10px",
+              }}
+            >
+              <img src={FirstNav} style={{ width: "28px" }} />
+            </div>
+          </div>
+        </div>
+        <div className="navbar-first-div2">
+          <div className="navbar-first-div-part1">
+            <div>Facial Assessment</div>
+            <div className="free-button">FREE</div>
+          </div>
+          <div className="navbar-first-div-part2">
+            <img src={Arrow} className="image-black" />
+          </div>
+        </div>
+      </div>
+
+      <div className="navbar-second">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <img src={FirstNav} alt="" />
+          </div>
+          <div
+            style={{
+              height: "7vh",
+              marginLeft: "30px",
+
+              borderLeft: "1px solid rgba(239, 239, 239, 0.93)",
+            }}
+          >
+            <img src={QLogo} style={{ height: "7vh" }} />
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
+            fontSize: "20px",
+          }}
+        >
+          <div
+            className="navbar-first-div-part1"
+            style={{
+              marginRight: "30px",
+              borderLeft: "1px solid rgba(239, 239, 239, 0.93)",
+              height: "8vh",
+              padding: "0px 10px",
+            }}
+          >
+            <div>Facial Assessment</div>
+            <div className="free-button">FREE</div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              height: "8vh",
+              justifyContent: "center",
+              alignItems: "center",
+              marginRight: "10px",
+              borderLeft: "1px solid rgba(236, 236, 236, 0.93)",
+              padding: "0 20px",
+            }}
+          >
+            <div style={{ width: "30px" }}>
+              <img src={Cart} />
+            </div>
+            <div style={{ fontSize: "36px", marginLeft: "5px" }}>0</div>
+          </div>
+        </div>
+      </div>
       <div className="wrapper" ref={scrollWrapperRef}>
         <div className="content-wrapper" ref={contentWrapperRef}>
           <div className="content">
