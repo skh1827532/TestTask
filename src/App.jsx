@@ -21,6 +21,9 @@ const App = () => {
   const scrollWrapperRef = useRef(null);
   const contentWrapperRef = useRef(null);
   const hideWrapperRef = useRef(null);
+  const cententWrapperRef2 = useRef(null);
+  const button3Ref = useRef(null);
+  const hideWrapperRef2 = useRef(null);
   const imageRefs = useRef([]);
 
   const [isWide, setIsWide] = useState(window.innerWidth >= 1280);
@@ -40,7 +43,10 @@ const App = () => {
   useEffect(() => {
     const scrollWrapper = scrollWrapperRef.current;
     const contentWrapper = contentWrapperRef.current;
+    const contentWrapper2 = cententWrapperRef2.current;
+    const hideWrapper2 = hideWrapperRef2.current;
     const hideWrapper = hideWrapperRef.current;
+    const button3 = button3Ref.current;
     const images = imageRefs.current;
 
     const handleScroll = () => {
@@ -81,6 +87,15 @@ const App = () => {
         contentWrapper.style.display = "none";
         if (isWide) {
           hideWrapper.style.display = "flex";
+        }
+
+        if (!isWide) {
+          contentWrapper2.style.display = "none";
+          hideWrapper2.style.display = "flex";
+        }
+
+        if (window.innerWidth < 768) {
+          button3.style.display = "flex";
         }
       }
     };
@@ -235,6 +250,75 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      <div className="content-wrapper2" ref={cententWrapperRef2}>
+        <div className="content2">
+          <h1
+            style={{
+              fontFamily: "PP Neue Montreal",
+              fontWeight: "bold",
+              fontSize: "60px",
+              height: "45px",
+            }}
+          >
+            The most
+          </h1>
+          <h1
+            style={{
+              fontFamily: "PP Neue Montreal",
+              fontWeight: "bold",
+              fontSize: "60px",
+              height: "45px",
+            }}
+          >
+            comprehensive
+          </h1>
+          <h1
+            style={{
+              fontFamily: "PP Neue Montreal",
+              fontStyle: "italic",
+              fontSize: "40px",
+            }}
+          >
+            analysis of your face
+          </h1>
+        </div>
+      </div>
+
+      <div className="hide-wrapper2" ref={hideWrapperRef2}>
+        <h1>
+          Document into <br />
+          200 pages<i> report of you</i>
+        </h1>
+        <p>Professional facial assessments and clear facial</p>
+        <p>changes visualisation.</p>
+        <div className="button2">
+          <div className="button-left2">ALL REPORTS</div>
+          <div className="button-right2">
+            <div>
+              <img
+                src={Line}
+                alt=""
+                className="buttonimg1"
+                style={{
+                  width: "3px",
+                  height: "30px",
+                  marginRight: "6px",
+                  color: "white",
+                }}
+              />
+            </div>
+            <div>
+              <img
+                src={Arrow}
+                alt=""
+                className="buttonimg2"
+                style={{ width: "24px", height: "20px" }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="wrapper" ref={scrollWrapperRef}>
         <div className="content-wrapper" ref={contentWrapperRef}>
           <div className="content">
@@ -322,6 +406,33 @@ const App = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="button3" ref={button3Ref}>
+        <div className="button-left3">ALL REPORTS</div>
+        <div className="button-right3">
+          <div>
+            <img
+              src={Line}
+              alt=""
+              className="buttonimg1"
+              style={{
+                width: "3px",
+                height: "30px",
+                marginRight: "6px",
+                color: "white",
+              }}
+            />
+          </div>
+          <div>
+            <img
+              src={Arrow}
+              alt=""
+              className="buttonimg2"
+              style={{ width: "24px", height: "20px" }}
+            />
           </div>
         </div>
       </div>

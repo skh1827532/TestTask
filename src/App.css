@@ -93,6 +93,15 @@ body {
   align-items: center;
 }
 
+.hide-wrapper2 {
+  flex-direction: column;
+  display: none;
+}
+
+.content-wrapper2 {
+  display: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -143,6 +152,34 @@ body {
   font-size: 20px;
 }
 
+.button2 {
+  margin-top: 1rem;
+  display: flex;
+  background-color: #809aa3;
+
+  color: white;
+  justify-content: space-between;
+  font-size: 16px;
+
+  width: 200px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  align-items: center;
+}
+
+.button2 .button-right2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button2 .button-left2 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "PP Neue Montreal";
+}
 .button {
   margin-top: 1rem;
   display: flex;
@@ -167,6 +204,34 @@ body {
 }
 
 .button .button-left {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "PP Neue Montreal";
+}
+.button3 {
+  margin-top: 1rem;
+  display: none;
+  background-color: #809aa3;
+
+  color: white;
+  justify-content: space-between;
+  font-size: 16px;
+
+  width: 200px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  align-items: center;
+}
+
+.button3 .button-right3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button3 .button-left3 {
   font-size: 16px;
   font-weight: 700;
   font-family: "PP Neue Montreal";
@@ -233,6 +298,10 @@ body {
   height: 10px;
 }
 
+.content-wrapper2 {
+  display: flex;
+}
+
 .image-black {
   filter: invert(100%) brightness(0);
   width: 20px;
@@ -289,6 +358,10 @@ body {
     justify-content: start;
   }
 
+  .button2 {
+    display: none;
+  }
+
   .img-wrapper {
     justify-content: flex-start;
   }
@@ -343,8 +416,20 @@ body {
     width: 100vw;
   }
 
+  .content-wrapper2 {
+    display: flex;
+  }
+
   .main-div {
     justify-content: start;
+  }
+
+  .button3 {
+    display: none;
+  }
+  .hide-wrapper2 {
+    justify-content: center;
+    align-items: center;
   }
 
   .navbar-first-div-part1 {
@@ -397,5 +482,16 @@ body {
     font-weight: 400;
     padding: 5px;
     margin-left: 20px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .content-wrapper2,
+  .hide-wrapper {
+    display: none;
+  }
+
+  .button3 {
+    display: none;
   }
 }
