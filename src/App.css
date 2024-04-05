@@ -289,6 +289,14 @@ body {
     justify-content: start;
   }
 
+  .img-wrapper {
+    justify-content: flex-start;
+  }
+
+  .content-wrapper {
+    display: none;
+  }
+
   .navbar-first-div-part1 {
     display: flex;
     justify-content: space-between;
@@ -302,6 +310,9 @@ body {
     padding: 5px;
     margin-left: 20px;
   }
+  .wrapper {
+    justify-content: start;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -311,6 +322,14 @@ body {
 
   .navbar {
     display: none;
+  }
+
+  .content-wrapper {
+    display: none;
+  }
+
+  .img-wrapper {
+    justify-content: flex-start;
   }
 
   .navbar-second {

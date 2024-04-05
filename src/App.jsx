@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import FirstImage from "./assets/FirstImage.png";
 import SecondImage from "./assets/SecondImage.png";
@@ -23,6 +23,20 @@ const App = () => {
   const hideWrapperRef = useRef(null);
   const imageRefs = useRef([]);
 
+  const [isWide, setIsWide] = useState(window.innerWidth >= 1280);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWide(window.innerWidth >= 1280);
+    };
+
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const scrollWrapper = scrollWrapperRef.current;
     const contentWrapper = contentWrapperRef.current;
@@ -38,19 +52,36 @@ const App = () => {
         console.log("End reached");
         images.forEach((image, index) => {
           image.style.transition = "transform 1s ease-in-out";
-          if (index < 8) {
-            image.style.transform = `translateX(${
-              1900 - 250 * index
-            }px) scale(1.1)`;
-          }
-          if (index === 8) {
-            image.style.transform = `translateX(${-100}px) scale(1.1)`;
-            image.style.zIndex = "1000";
+
+          if (!isWide) {
+            const centerTranslation =
+              scrollWrapper.clientWidth / 2 - image.clientWidth / 2;
+            if (index < 8) {
+              image.style.transform = `translateX(${
+                2000 - centerTranslation - 250 * index
+              }px) scale(1.1)`;
+            }
+            if (index === 8) {
+              image.style.transform = `translateX(${-centerTranslation}px) scale(1.1)`;
+              image.style.zIndex = "1000";
+            }
+          } else {
+            if (index < 8) {
+              image.style.transform = `translateX(${
+                2000 - 100 - 250 * index
+              }px) scale(1.1)`;
+            }
+            if (index === 8) {
+              image.style.transform = `translateX(${-100}px) scale(1.1)`;
+              image.style.zIndex = "1000";
+            }
           }
         });
 
         contentWrapper.style.display = "none";
-        hideWrapper.style.display = "flex";
+        if (isWide) {
+          hideWrapper.style.display = "flex";
+        }
       }
     };
 
