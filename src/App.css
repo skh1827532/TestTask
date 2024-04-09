@@ -466,6 +466,17 @@ body {
     width: 100vw;
   }
 
+  .img-wrapper {
+    display: flex;
+    column-gap: 30px;
+    padding: 1rem;
+  }
+
+  .img-wrapper img {
+    width: 320px;
+    height: 300px;
+  }
+
   .main-div {
     justify-content: start;
   }
@@ -483,9 +494,22 @@ body {
     padding: 5px;
     margin-left: 20px;
   }
+
+  .hide-wrapper {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    padding: 1rem;
+    font-family: "PP Neue Montreal";
+    align-items: flex-start;
+    display: none;
+    margin-bottom: 1rem;
+    margin-left: 400px;
+  }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
   .content-wrapper2,
   .hide-wrapper {
     display: none;
@@ -493,5 +517,20 @@ body {
 
   .button3 {
     display: none;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1919px) {
+  .hide-wrapper {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    padding: 1rem;
+    font-family: "PP Neue Montreal";
+    align-items: flex-start;
+    display: none;
+    margin-bottom: 1rem;
+    margin-left: 200px;
   }
 }

@@ -54,6 +54,17 @@ const App = () => {
       const scrollWidth = scrollWrapper.scrollWidth;
       const clientWidth = scrollWrapper.clientWidth;
       console.log(scrollWidth);
+      let toBeScrolled;
+      let scalePerImage;
+
+      if (window.innerWidth > 1920) {
+        toBeScrolled = 2800;
+        scalePerImage = 350;
+      } else {
+        toBeScrolled = 2000;
+        scalePerImage = 250;
+      }
+
       if (scrollLeft + clientWidth >= scrollWidth - 50) {
         console.log("End reached");
         images.forEach((image, index) => {
@@ -64,7 +75,7 @@ const App = () => {
               scrollWrapper.clientWidth / 2 - image.clientWidth / 2;
             if (index < 8) {
               image.style.transform = `translateX(${
-                2000 - centerTranslation - 250 * index
+                toBeScrolled - centerTranslation - scalePerImage * index
               }px) scale(1.1)`;
             }
             if (index === 8) {
@@ -74,11 +85,11 @@ const App = () => {
           } else {
             if (index < 8) {
               image.style.transform = `translateX(${
-                2000 - 100 - 250 * index
+                toBeScrolled - 200 - scalePerImage * index
               }px) scale(1.1)`;
             }
             if (index === 8) {
-              image.style.transform = `translateX(${-100}px) scale(1.1)`;
+              image.style.transform = `translateX(${-200}px) scale(1.1)`;
               image.style.zIndex = "1000";
             }
           }
